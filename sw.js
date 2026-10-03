@@ -1,8 +1,8 @@
 // Service worker of the public player (S-016). Caches the app shell so the player opens offline; the cache name is a hash of
 // the shell (vite.player.config.ts fills CACHE and SHELL). It never stores a pack or a save: those live in device storage
 // (OPFS / IndexedDB) and are never fetched. Non-GET and Range requests pass straight through.
-const CACHE = "monengine-player-9d6aeb0b45d3";
-const SHELL = ["./","assets/index-BpWzDEDq.js","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","index.html","manifest.webmanifest"];
+const CACHE = "monengine-player-18d876cf0610";
+const SHELL = ["./","assets/index-BPb6VPfT.js","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","index.html","manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
